@@ -11,22 +11,6 @@ on:
 #CI权限
 permissions: write-all
 
-#CI任务
-jobs:
-  OpenWrt_config:
-  with:
-      #编译平台
-      OpenWrt_TARGET: Rockchip
-      #默认主题
-      OpenWrt_THEME: argon
-      #默认主机名
-      OpenWrt_NAME: 狗鹏
-      #默认密码，仅作展示，请勿乱改
-      OpenWrt_PW: password
-      #默认地址
-      OpenWrt_IP: 192.168.1.1
-      #默认源码
-      OpenWrt_URL: https://github.com/coolsnowwolf/lede.git
 
 on:
   #公用核心标识
