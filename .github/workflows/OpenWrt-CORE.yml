@@ -1,12 +1,12 @@
 #云编译公用核心
 name: OpenWrt-CORE
 
-
-#CI权限
-permissions: write-all
-
-
 on:
+  #自动编译：每天早上4点
+  schedule:
+    - cron: 0 20 * * *
+  #手动编译
+  workflow_dispatch:
   #公用核心标识
   workflow_call:
     inputs:
@@ -36,6 +36,9 @@ env:
   OpenWrt_URL: ${{inputs.OpenWrt_URL}}
   OpenWrt_PW: ${{inputs.OpenWrt_PW}}
   OpenWrt_IP: ${{inputs.OpenWrt_IP}}
+
+#CI权限
+permissions: write-all
 
 jobs:
   OpenWrt_core:
