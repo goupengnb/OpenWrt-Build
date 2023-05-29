@@ -1,6 +1,9 @@
 #云编译公用核心
 name: OpenWrt-CORE
 
+#CI权限
+permissions: write-all
+
 on:
   #自动编译：每天早上4点
   schedule:
@@ -29,21 +32,6 @@ on:
         required: true
         type: string
 env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  OpenWrt_TARGET: ${{inputs.OpenWrt_TARGET}}
-  OpenWrt_THEME: ${{inputs.OpenWrt_THEME}}
-  OpenWrt_NAME: ${{inputs.OpenWrt_NAME}}
-  OpenWrt_URL: ${{inputs.OpenWrt_URL}}
-  OpenWrt_PW: ${{inputs.OpenWrt_PW}}
-  OpenWrt_IP: ${{inputs.OpenWrt_IP}}
-
-#CI权限
-permissions: write-all
-
-jobs:
-  OpenWrt_config:
-    #调用公用编译核心OpenWrt-CORE.yml
-    with:
       #编译平台
       OpenWrt_TARGET: Rockchip
       #默认主题
@@ -56,6 +44,16 @@ jobs:
       OpenWrt_IP: 192.168.1.1
       #默认源码
       OpenWrt_URL: https://github.com/coolsnowwolf/lede.git
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  OpenWrt_TARGET: ${{inputs.OpenWrt_TARGET}}
+  OpenWrt_THEME: ${{inputs.OpenWrt_THEME}}
+  OpenWrt_NAME: ${{inputs.OpenWrt_NAME}}
+  OpenWrt_URL: ${{inputs.OpenWrt_URL}}
+  OpenWrt_PW: ${{inputs.OpenWrt_PW}}
+  OpenWrt_IP: ${{inputs.OpenWrt_IP}}
+
+
+
 
 jobs:
   OpenWrt_core:
