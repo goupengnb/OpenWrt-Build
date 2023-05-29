@@ -44,13 +44,6 @@ env:
       OpenWrt_IP: 192.168.1.1
       #默认源码
       OpenWrt_URL: https://github.com/coolsnowwolf/lede.git
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  OpenWrt_TARGET: ${{inputs.OpenWrt_TARGET}}
-  OpenWrt_THEME: ${{inputs.OpenWrt_THEME}}
-  OpenWrt_NAME: ${{inputs.OpenWrt_NAME}}
-  OpenWrt_URL: ${{inputs.OpenWrt_URL}}
-  OpenWrt_PW: ${{inputs.OpenWrt_PW}}
-  OpenWrt_IP: ${{inputs.OpenWrt_IP}}
 
 
 
