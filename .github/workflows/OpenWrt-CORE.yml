@@ -41,6 +41,9 @@ env:
 permissions: write-all
 
 jobs:
+  OpenWrt_config:
+    #调用公用编译核心OpenWrt-CORE.yml
+    with:
       #编译平台
       OpenWrt_TARGET: Rockchip
       #默认主题
