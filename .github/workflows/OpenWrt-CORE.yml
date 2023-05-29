@@ -41,7 +41,6 @@ env:
 permissions: write-all
 
 jobs:
-    with:
       #编译平台
       OpenWrt_TARGET: Rockchip
       #默认主题
