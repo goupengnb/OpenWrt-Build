@@ -32,13 +32,7 @@ on:
         required: true
         type: string
 env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  OWRT_TARGET: ${{inputs.OWRT_TARGET}}
-  OWRT_THEME: ${{inputs.OWRT_THEME}}
-  OWRT_NAME: ${{inputs.OWRT_NAME}}
-  OWRT_URL: ${{inputs.OWRT_URL}}
-  OWRT_PW: ${{inputs.OWRT_PW}}
-  OWRT_IP: ${{inputs.OWRT_IP}}
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #编译平台
       OpenWrt_TARGET: Rockchip
       #默认主题
