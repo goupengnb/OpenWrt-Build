@@ -1,0 +1,31 @@
+#CI项目名
+name: Rockchip-Lede
+
+on:
+  #自动编译：每天早上4点
+  schedule:
+    - cron: 0 20 * * *
+  #手动编译
+  workflow_dispatch:
+
+#CI权限
+permissions: write-all
+
+#CI任务
+jobs:
+  OpenWrt_config:
+    #调用公用编译核心OpenWrt-CORE.yml
+    uses: ./.github/workflows/OpenWrt-CORE.yml
+    with:
+      #编译平台
+      OpenWrt_TARGET: Rockchip
+      #默认主题
+      OpenWrt_THEME: argon
+      #默认主机名
+      OpenWrt_NAME: 狗鹏
+      #默认密码，仅作展示，请勿乱改
+      OpenWrt_PW: password
+      #默认地址
+      OpenWrt_IP: 192.168.1.1
+      #默认源码
+      OpenWrt_URL: https://github.com/coolsnowwolf/lede.git
