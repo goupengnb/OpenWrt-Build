@@ -4,7 +4,7 @@
 LEDE源码：
 https://github.com/coolsnowwolf/lede
 
-# 固件简要说明：
+# 编译简要说明：
 固件信息里的时间为编译开始的时间，方便核对上游源码提交时间
 
 自定义主题 主机名 管理地址 编译源码：.github/workflows/OpenWrt-Build.yml
