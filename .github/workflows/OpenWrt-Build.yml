@@ -120,8 +120,6 @@ jobs:
           rm -rf ./tmp* ./.config*
           cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
 
-          $GITHUB_WORKSPACE/Scripts/Extras.sh
-
           make defconfig
 
       - name: Cleanup Toolchain
