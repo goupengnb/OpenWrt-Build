@@ -44,7 +44,7 @@ env:
       #默认地址
       OpenWrt_IP: 192.168.1.1
       #默认源码
-      OpenWrt_URL: https://github.com/coolsnowwolf/lede.git
+      OpenWrt_URL: https://github.com/coolsnowwolf/lede
 
 
 
