@@ -9,7 +9,7 @@ https://github.com/coolsnowwolf/lede
 
 自定义主题 主机名 管理地址 编译源码：.github/workflows/OpenWrt-Build.yml
 
-自定义删除或添加插件：Config/General.txt
+自定义固件配置：Config/General.txt
 
 自定义编译机型：Config/Rockchip.txt
 
