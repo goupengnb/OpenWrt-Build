@@ -34,7 +34,7 @@ on:
 env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #编译平台
-      OpenWrt_TARGET: Rockchip
+      OpenWrt_TARGET: X64
       #默认主题
       OpenWrt_THEME: argon
       #默认主机名
