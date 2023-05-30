@@ -13,8 +13,8 @@ git clone --depth=1 --single-branch https://github.com/linkease/nas-packages-luc
 #Open Clash
 git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git
 #Pass Wall 
- git clone --depth=1 --single-branch --branch "luci" https://github.com/xiaorouji/openwrt-passwall.git ./pw_luci 
- git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaorouji/openwrt-passwall.git ./pw_packages
+git clone --depth=1 --single-branch --branch "luci" https://github.com/xiaorouji/openwrt-passwall.git ./pw_luci 
+git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaorouji/openwrt-passwall.git ./pw_packages
 #adguardhome
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 #预置OpenClash内核和GEO数据
