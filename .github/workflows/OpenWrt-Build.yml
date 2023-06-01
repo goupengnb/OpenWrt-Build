@@ -5,7 +5,7 @@ name: OpenWrt-Build
 permissions: write-all
 
 on:
-  #自动编译：每天0点
+  #自动编译：每天0点(UTC时区)
   schedule:
     - cron: 0 16 * * *
   #手动编译
