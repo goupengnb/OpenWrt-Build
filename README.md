@@ -17,4 +17,4 @@ https://github.com/coolsnowwolf/lede
 
 自定义DIY脚本：Scripts/Settings.sh
 
-固件每天早上4点自动编译
+固件每天24点自动编译
