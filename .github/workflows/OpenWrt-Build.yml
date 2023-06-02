@@ -7,8 +7,7 @@ permissions: write-all
 on:
   schedule:
   #自动编译：每天24点(北京时间)
-      - cron: '0 12 * * *'
-      timezone: Asia/Shanghai
+  - cron: '0 16 * * *'
   #手动编译
   workflow_dispatch:
   #公用核心标识
