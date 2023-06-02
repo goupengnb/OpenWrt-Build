@@ -5,10 +5,10 @@ name: OpenWrt-Build
 permissions: write-all
 
 on:
-  #自动编译：每天24点(UTC时区)
-  #UTC时区+8为北京时间
   schedule:
-    - cron: 0 16 * * *
+  #自动编译：每天24点(北京时间)
+      - cron: '0 12 * * *'
+      timezone: Asia/Shanghai
   #手动编译
   workflow_dispatch:
   #公用核心标识
