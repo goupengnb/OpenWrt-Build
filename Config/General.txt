@@ -30,6 +30,7 @@ CONFIG_PACKAGE_luci-app-linkease=y
 CONFIG_PACKAGE_luci-app-unishare=y  
 CONFIG_PACKAGE_luci-app-quickstart=y
 CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
