@@ -19,7 +19,6 @@ git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaor
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 ＃ddnsgo
 git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
-ges/tree/master/luci-app-ddns-go.git
 #预置OpenClash内核和GEO数据
 export CORE_VER=https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/core_version
 export CORE_TUN=https://github.com/vernesong/OpenClash/raw/core/dev/premium/clash-linux
