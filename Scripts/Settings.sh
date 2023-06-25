@@ -11,9 +11,9 @@ sed -i "s/hostname='.*'/hostname='$OpenWrt_NAME'/g" ./package/base-files/files/b
 #修改默认时区
 sed -i "s/timezone='.*'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
-#TTYD 自动登录 
+#TTYD自动登录 
 sed -i 's|/bin/login|/bin/login -f root|g' ./feeds/packages/utils/ttyd/files/ttyd.config
-＃调整ttyd到服务菜单
+＃调整TTYD到服务菜单
 sed -i 's/system/services/g' ./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
 #取消对samba4的菜单调整 
 sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
