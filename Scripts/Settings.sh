@@ -16,8 +16,6 @@ sed -i '/r5c/{n;n;n;i \    ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wla
 }' target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
 #编译6.1内核
 sed -i 's/5.15/6.1/g' ./target/linux/rockchip/Makefile
-#TTYD 自动登录 
-sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 #加入编译作者信息
 sed -i "s/OpenWrt /GouPeng Build @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 #修改ssh登录信息
