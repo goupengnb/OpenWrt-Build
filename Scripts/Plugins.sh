@@ -9,4 +9,4 @@ git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaor
 #adguardhome
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 ＃ddns-go
-git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git ./package/ddns-go
