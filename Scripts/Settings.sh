@@ -14,7 +14,7 @@ sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" 
 #快速出来WiFi 
 sed -i "s/exit\ 0/wifi\ config\ \&\&\ wifi\nexit\ 0/g"  target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 ＃调整ttyd到服务菜单
-sed -i 's/system/services/g'./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
+sed -i 's/system/services/g' ./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
 #取消对samba4的菜单调整 
 sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 #清除默认密码password
