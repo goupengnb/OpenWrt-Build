@@ -8,5 +8,7 @@ git clone --depth=1 --single-branch --branch "luci" https://github.com/xiaorouji
 git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaorouji/openwrt-passwall.git ./pw_packages
 #adguardhome
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
+#ttyd
+git clone --depth=1 --single-branch https://github.com/tsl0922/ttyd.git
 #ddns-go
 git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git ./package/ddns-go
