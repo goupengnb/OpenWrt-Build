@@ -14,13 +14,13 @@ sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" 
 #首次开机后重启
 sed -i "3i\sleep 180 && reboot\nsed -i \'3,4d\' /etc/rc.local" ./package/base-files/files/etc/rc.local
 #TTYD自动登录 
-#sed -i 's/\/bin\/login/\/bin\/login -f root/' ./feeds/packages/utils/ttyd/files/ttyd.config
+sed -i 's/\/bin\/login/\/bin\/login -f root/' ./feeds/packages/utils/ttyd/files/ttyd.config
 #调整TTYD到服务菜单
 sed -i 's/system/services/g' ./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
 #取消对samba4的菜单调整 
 sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 #清除默认密码password
-#sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 #修改R5C leds配置
 sed -i '/r5c/{n;n;n;i \    ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wlan0"
 }' target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
