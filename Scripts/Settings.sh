@@ -16,7 +16,7 @@ sed -i "3i\sleep 180 && reboot\nsed -i \'3,4d\' /etc/rc.local" ./package/base-fi
 #TTYD自动登录 
 #sed -i 's/\/bin\/login/\/bin\/login -f root/' ./feeds/packages/utils/ttyd/files/ttyd.config
 #调整TTYD到服务菜单
-sed -i 's/system/services/g' ./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
+#sed -i 's/system/services/g' ./feeds/luci/applications/luci-app-ttyd/luasrc/controller/terminal.lua
 #取消对samba4的菜单调整 
 sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 #清除默认密码password
