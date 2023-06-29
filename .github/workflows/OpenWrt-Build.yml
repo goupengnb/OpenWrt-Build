@@ -73,21 +73,18 @@ jobs:
           sudo -E systemctl daemon-reload
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
-- name: 部署编译环境 Initialization Environment
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        run: |
-          docker rmi $(docker images -q)
-          sudo -E rm -rf $(cat $GITHUB_WORKSPACE/Config/Depends.txt | sed -n "1{s/\r$//;p;q}")
-          sudo -E apt -yqq update
-          sudo -E apt -yqq purge $(cat $GITHUB_WORKSPACE/Config/Depends.txt | sed -n "2{s/\r$//;p;q}")
-          sudo -E apt -yqq full-upgrade
-          sudo -E apt -yqq install $(cat $GITHUB_WORKSPACE/Config/Depends.txt | sed -n "3{s/\r$//;p;q}")
-          sudo -E apt -yqq autoremove --purge
-          sudo -E apt -yqq autoclean
-          sudo -E apt -yqq clean
-          sudo -E systemctl daemon-reload
-          sudo -E timedatectl set-timezone "Asia/Shanghai"
+- name: Initialization Values 
+         run: | 
+           export OpenWrt_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S") 
+           export OpenWrt_SOURCE=$(echo $OpenWrt_URL | cut -d '/' -f 5) 
+           export OpenWrt_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt) 
+  
+           echo "OpenWrt_SOURCE=$OpenWrt_SOURCE" >> $GITHUB_ENV 
+           echo "OpenWrt_TARGET=$OpenWrt_TARGET" >> $GITHUB_ENV 
+           echo "OpenWrt_DATE=$OpenWrt_DATE" >> $GITHUB_ENV 
+           echo "OpenWrt_TYPE=$OpenWrt_TYPE" >> $GITHUB_ENV 
+           echo "OpenWrt_PW=$OpenWrt_PW" >> $GITHUB_ENV 
+           echo "OpenWrt_IP=$OpenWrt_IP" >> $GITHUB_ENV
 
       - name: Check Scripts
         run: |
