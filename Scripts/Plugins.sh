@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Argon Theme
-git clone --depth=1 --single-branch --branch git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+git clone --depth=1 --single-branch git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 git clone --depth=1 --single-branch git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config
 #Pass Wall 
 git clone --depth=1 --single-branch --branch "luci" https://github.com/xiaorouji/openwrt-passwall.git ./pw_luci 
