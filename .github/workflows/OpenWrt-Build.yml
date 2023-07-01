@@ -16,7 +16,7 @@ on:
     inputs:
       OpenWrt_TARGET:
         required: true
-        type: strin
+        type: string
       OpenWrt_NAME:
         required: true
         type: string
