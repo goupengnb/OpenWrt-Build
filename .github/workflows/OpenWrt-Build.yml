@@ -17,6 +17,9 @@ on:
       OpenWrt_TARGET:
         required: true
         type: string
+      OpenWrt_THEME:
+        required: true
+        type: string
       OpenWrt_NAME:
         required: true
         type: string
@@ -33,6 +36,8 @@ env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #编译平台
       OpenWrt_TARGET: Rockchip
+      #默认主题
+      OpenWrt_THEME: argon
       #默认主机名
       OpenWrt_NAME: 狗鹏
       #默认密码，仅作展示，请勿乱改
