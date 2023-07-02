@@ -17,9 +17,6 @@ on:
       OpenWrt_TARGET:
         required: true
         type: string
-      OpenWrt_THEME:
-        required: true
-        type: string
       OpenWrt_NAME:
         required: true
         type: string
