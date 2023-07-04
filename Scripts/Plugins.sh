@@ -10,3 +10,5 @@ git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaor
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 #ddns-go
 git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git
+#File Browser
+git clone -b 18.06 https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
