@@ -11,4 +11,4 @@ git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-ad
 #ddns-go
 git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git
 #File Browser
-git clone -b 18.06 https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
+git clone -b 18.06 https://github.com/xiaozhuai/luci-app-filebrowser ./package/luci-app-filebrowser
