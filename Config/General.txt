@@ -14,11 +14,6 @@ CONFIG_PACKAGE_kmod-mac80211=y
 CONFIG_PACKAGE_kmod-mt7921-firmware=y
 CONFIG_PACKAGE_kmod-mt7921e=y
 CONFIG_PACKAGE_hostapd=y
-#增加组件 
-CONFIG_PACKAGE_autocore=y
-CONFIG_PACKAGE_autocore-arm=y
-CONFIG_PACKAGE_luci-compat=y
-CONFIG_PACKAGE_luci-lib-ipkg=y
 #IPV6支持 
 CONFIG_IPV6=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
@@ -30,11 +25,12 @@ CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_kmod-ip6tables=y
 CONFIG_PACKAGE_kmod-ip6tables-extra=y
 CONFIG_PACKAGE_6in4=y
-#增加组件
+#增加组件 
 CONFIG_PACKAGE_autocore=y
+CONFIG_PACKAGE_autocore-arm=y
 CONFIG_PACKAGE_luci-compat=y
 CONFIG_PACKAGE_luci-lib-ipkg=y
-CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_luci-ssl-nginx=y
 #增加插件
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
@@ -46,6 +42,7 @@ CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-diskman=y
 #删除插件
+CONFIG_PACKAGE_luci-ssl=n
 CONFIG_PACKAGE_luci-app-wol=n
 CONFIG_PACKAGE_luci-app-vlmcsd=n
 CONFIG_PACKAGE_luci-app-xlnetacc=n
