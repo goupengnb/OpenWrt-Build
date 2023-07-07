@@ -10,5 +10,3 @@ git clone --depth=1 --single-branch --branch "packages" https://github.com/xiaor
 git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 #ddns-go
 git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git
-#ttyd
-git clone --depth=1 --single-branch https://github.com/tsl0922/ttyd.git
