@@ -20,7 +20,7 @@ sed -i "3i\sleep 100 && reboot\nsed -i \'3,4d\' /etc/rc.local" ./package/base-fi
 #取消对samba4的菜单调整 
 sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 #清除默认密码password
-#sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/V4UetPzk$CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 #修改R5C leds配置
 sed -i '/r5c/{n;n;n;i \    ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wlan0"
 }' target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
