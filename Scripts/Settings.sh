@@ -28,8 +28,6 @@ sed -i '/r5c/{n;n;n;i \    ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wla
 sed -i 's/5.15/6.1/g' ./target/linux/rockchip/Makefile
 #加入编译作者信息
 sed -i "s/OpenWrt /GouPeng Build @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
-#去除型号右侧肿瘤式跑分信息 
-sed -i "s|\ <%=luci.sys.exec(\"cat \/etc\/bench.log\") or \" \"%>||g" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #修改ssh登录信息
 >package/base-files/files/etc/banner
 echo -e ' ██████╗  ██████╗ ██╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗ ' >> package/base-files/files/etc/banner
