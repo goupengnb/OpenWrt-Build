@@ -78,7 +78,6 @@ jobs:
         run: | 
           export OpenWrt_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S") 
           export OpenWrt_SOURCE=$(echo $OpenWrt_URL | cut -d '/' -f 5) 
-          export OpenWrt_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt) 
   
           echo "OpenWrt_SOURCE=$OpenWrt_SOURCE" >> $GITHUB_ENV 
           echo "OpenWrt_TARGET=$OpenWrt_TARGET" >> $GITHUB_ENV 
