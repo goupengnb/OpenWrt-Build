@@ -41,7 +41,7 @@ env:
       #默认主机名
       OpenWrt_NAME: 狗鹏
       #默认密码，仅作展示，请勿乱改
-      OpenWrt_PW: password
+      OpenWrt_PW: src-git haibo https://github.com/haiibo/openwrt-packages
       #默认地址
       OpenWrt_IP: 192.168.1.1
       #默认源码
@@ -100,7 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo 'src-git haibo https://github.com/haiibo/openwrt-packages' >>feeds.conf.default
+          echo '$OpenWrt_PW' >>feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
