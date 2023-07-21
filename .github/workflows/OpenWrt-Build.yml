@@ -110,10 +110,6 @@ jobs:
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
 
-          cd ./package
-
-          $GITHUB_WORKSPACE/Scripts/Plugins.sh
-
       - name: Custom Settings
         run: |
           cd ./OpenWrt
