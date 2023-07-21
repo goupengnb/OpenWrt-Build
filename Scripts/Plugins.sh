@@ -11,5 +11,3 @@
 #ddns-go
 #git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git
 echo 'src-git haibo https://github.com/haiibo/openwrt-packages' >>feeds.conf.default
-./scripts/feeds update -a
-./scripts/feeds install -a
