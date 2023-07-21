@@ -100,7 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo 'OpenWrt_PW' >>feeds.conf.default
+          echo 'src-git haibo https://github.com/haiibo/openwrt-packages' >>feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
