@@ -89,6 +89,7 @@ jobs:
           echo "OpenWrt_TYPE=$OpenWrt_TYPE" >> $GITHUB_ENV 
           echo "OpenWrt_PW=$OpenWrt_PW" >> $GITHUB_ENV 
           echo "OpenWrt_IP=$OpenWrt_IP" >> $GITHUB_ENV
+echo "OpenWrt_IP=$packages_repo" >> $GITHUB_ENV
 
       - name: Check Scripts
         run: |
