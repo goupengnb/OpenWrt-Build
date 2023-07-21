@@ -10,4 +10,4 @@
 #git clone --depth=1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 #ddns-go
 #git clone --depth=1 --single-branch https://github.com/sirpdboy/luci-app-ddns-go.git
-echo 'src-git haibo https://github.com/haiibo/openwrt-packages' >>feeds.conf.default
+#echo 'src-git haibo https://github.com/haiibo/openwrt-packages' >>feeds.conf.default
