@@ -100,6 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
+          $GITHUB_WORKSPACE/Scripts/Plugins.sh
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -108,10 +109,6 @@ jobs:
           cd ./OpenWrt
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
-
-          cd ./package
-
-          $GITHUB_WORKSPACE/Scripts/Plugins.sh
 
       - name: Custom Settings
         run: |
