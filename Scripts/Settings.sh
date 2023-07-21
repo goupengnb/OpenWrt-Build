@@ -30,7 +30,7 @@ sed -i '/r5c/{n;n;n;i \    ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wla
 #编译6.1内核
 sed -i 's/5.15/6.1/g' ./target/linux/rockchip/Makefile
 #加入编译作者信息
-sed -i "s/OpenWrt /GouPeng Build @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /GouPeng Build /g" package/lean/default-settings/files/zzz-default-settings
 #修改ssh登录信息
 >package/base-files/files/etc/banner
 echo -e ' ██████╗  ██████╗ ██╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗ ' >> package/base-files/files/etc/banner
