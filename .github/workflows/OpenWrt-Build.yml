@@ -78,10 +78,12 @@ jobs:
         run: | 
           export OpenWrt_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S") 
           export OpenWrt_SOURCE=$(echo $OpenWrt_URL | cut -d '/' -f 5) 
+          export OpenWrt_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt) 
   
           echo "OpenWrt_SOURCE=$OpenWrt_SOURCE" >> $GITHUB_ENV 
           echo "OpenWrt_TARGET=$OpenWrt_TARGET" >> $GITHUB_ENV 
           echo "OpenWrt_DATE=$OpenWrt_DATE" >> $GITHUB_ENV 
+          echo "OpenWrt_TYPE=$OpenWrt_TYPE" >> $GITHUB_ENV 
           echo "OpenWrt_PW=$OpenWrt_PW" >> $GITHUB_ENV 
           echo "OpenWrt_IP=$OpenWrt_IP" >> $GITHUB_ENV
 
@@ -142,24 +144,24 @@ jobs:
           du -h --max-depth=1
           echo "======================="
 
-- name: Package Firmware
-  run: |
-    cd ./OpenWrt && mkdir ./upload
+      - name: Package Firmware
+        run: |
+          cd ./OpenWrt && mkdir ./upload
 
-    rm -rf $(find ./bin/targets/ -iregex ".*\(json\|manifest\|buildinfo\|sha256sums\|packages\)$")
-    cp -rf $(find ./bin/targets/ -type f -iname "*.*") ./upload/
-    cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
+          rm -rf $(find ./bin/targets/ -iregex ".*\(json\|manifest\|buildinfo\|sha256sums\|packages\)$")
+          cp -rf $(find ./bin/targets/ -type f -iname "*.*") ./upload/
+          cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
 
-    cd ./upload
+          cd ./upload
 
-    for var in $OpenWrt_TYPE ; do
-      for file in $(find ./ -type f -iname "*$var*.*" ! -iname "*.txt") ; do
-        export ext=$(basename "$file" | cut -d '.' -f 2-3)
-        export name=$(basename "$file" | cut -d '.' -f 1 | grep -io "\($var\).*")
-        export new_file="$OpenWrt_SOURCE"_"$name"_"$OpenWrt_DATE"."$ext"
-        mv -f "$file" "$new_file"
-      done
-    done
+          for var in $OpenWrt_TYPE ; do
+           for file in $(find ./ -type f -iname "*$var*.*" ! -iname "*.txt") ; do
+            export ext=$(basename "$file" | cut -d '.' -f 2-3)
+            export name=$(basename "$file" | cut -d '.' -f 1 | grep -io "\($var\).*")
+            export new_file="$OpenWrt_SOURCE"_"$name"_"$OpenWrt_DATE"."$ext"
+            mv -f "$file" "$new_file"
+           done
+          done
 
       - name: Release Firmware
         uses: softprops/action-gh-release@master
