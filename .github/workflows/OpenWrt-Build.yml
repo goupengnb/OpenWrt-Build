@@ -44,10 +44,11 @@ env:
       OpenWrt_PW: password
       #默认地址
       OpenWrt_IP: 192.168.1.1
+      #添加软件源
+      OpenWrt_SOURCE: https://github.com/haiibo/openwrt-packages
       #默认源码
       OpenWrt_URL: https://github.com/coolsnowwolf/lede
-      packages_repo: https://github.com/haiibo/openwrt-packages
-
+      
 
 
 jobs:
@@ -100,7 +101,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo "src-git source $packages_repo" >> feeds.conf.default
+          echo "src-git source $OpenWrt_SOURCE" >> feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
