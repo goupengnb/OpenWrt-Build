@@ -100,7 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo '$OpenWrt_PW' >>feeds.conf.default
+          echo '$OpenWrt_NAME' >>feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
