@@ -82,7 +82,6 @@ jobs:
           echo "OpenWrt_SOURCE=$OpenWrt_SOURCE" >> $GITHUB_ENV 
           echo "OpenWrt_TARGET=$OpenWrt_TARGET" >> $GITHUB_ENV 
           echo "OpenWrt_DATE=$OpenWrt_DATE" >> $GITHUB_ENV 
-          echo "OpenWrt_TYPE=$OpenWrt_TYPE" >> $GITHUB_ENV 
           echo "OpenWrt_PW=$OpenWrt_PW" >> $GITHUB_ENV 
           echo "OpenWrt_IP=$OpenWrt_IP" >> $GITHUB_ENV
 
