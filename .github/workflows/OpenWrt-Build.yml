@@ -46,7 +46,7 @@ env:
       OpenWrt_IP: 192.168.1.1
       #默认源码
       OpenWrt_URL: https://github.com/coolsnowwolf/lede
-     packages_repo=https://github.com/haiibo/openwrt-packages
+
 
 
 
@@ -100,7 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo "src-git haibo $packages_repo" >> feeds.conf.default
+
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -109,6 +109,10 @@ jobs:
           cd ./OpenWrt
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
+
+          cd ./package
+
+          $GITHUB_WORKSPACE/Scripts/Plugins.sh
 
       - name: Custom Settings
         run: |
