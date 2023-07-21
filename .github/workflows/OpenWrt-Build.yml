@@ -32,6 +32,9 @@ on:
       OpenWrt_IP:
         required: true
         type: string
+      packages_repo:
+        required: true
+        type: string
 env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #编译平台
