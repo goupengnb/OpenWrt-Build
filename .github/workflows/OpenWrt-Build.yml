@@ -44,11 +44,10 @@ env:
       OpenWrt_PW: password
       #默认地址
       OpenWrt_IP: 192.168.1.1
-      #添加软件源
-      OpenWrt_PlUGINS: https://github.com/haiibo/openwrt-packages
       #默认源码
       OpenWrt_URL: https://github.com/coolsnowwolf/lede
-      
+
+
 
 
 jobs:
@@ -101,7 +100,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo "src-git Plugins $OpenWrt_PlUGINS" >> feeds.conf.default
+
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -111,12 +110,16 @@ jobs:
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
 
+          cd ./package
+
+          $GITHUB_WORKSPACE/Scripts/Plugins.sh
+
       - name: Custom Settings
         run: |
           cd ./OpenWrt
 
           rm -rf ./tmp* ./.config*
-          cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/DIYConfig.txt >> .config
+          cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
 
           make defconfig
 
@@ -153,15 +156,8 @@ jobs:
           cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
 
           cd ./upload
-       
-          for var in $OpenWrt_TYPE ; do
-           for file in $(find ./ -type f -iname "*$var*.*" ! -iname "*.txt") ; do
-            export ext=$(basename "$file" | cut -d '.' -f 2-3)
-            export name=$(basename "$file" | cut -d '.' -f 1 | grep -io "\($var\).*")
-            export new_file="$OpenWrt_SOURCE"_"$name"_"$OpenWrt_DATE"."$ext"
-            mv -f "$file" "$new_file"
-           done
-          done
+
+          $GITHUB_WORKSPACE/Scripts/Renames.sh
 
       - name: Release Firmware
         uses: softprops/action-gh-release@master
