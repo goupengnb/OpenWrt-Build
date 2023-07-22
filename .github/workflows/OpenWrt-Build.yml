@@ -101,7 +101,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./OpenWrt
-          echo "src-git source $OpenWrt_PlUGINS" >> feeds.conf.default
+          echo "src-git Plugins $OpenWrt_PlUGINS" >> feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
