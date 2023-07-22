@@ -153,7 +153,7 @@ jobs:
           cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
 
           cd ./upload
-       #批量重命名为 源码_型号_日期
+       
           for var in $OpenWrt_TYPE ; do
            for file in $(find ./ -type f -iname "*$var*.*" ! -iname "*.txt") ; do
             export ext=$(basename "$file" | cut -d '.' -f 2-3)
