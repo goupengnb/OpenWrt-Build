@@ -117,7 +117,7 @@ jobs:
           cd ./OpenWrt
 
           rm -rf ./tmp* ./.config*
-          cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
+          cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/DIYConfig.txt >> .config
 
           make defconfig
 
